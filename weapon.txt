@@ -1,0 +1,96 @@
+﻿#Dwimerytowy miecz
+Cios mieczem
+Dwimerytowa zbroja
+Szabla muszkietera
+Cięcie szabla
+Zbroja z łuski smoka
+Krótki miecz samurajski
+Cios samurajski
+Lodowa tarcza
+Widelec do sera
+Cios widelcem
+Diamentowa zbroja
+Kryształowa dzida
+Pchnięcie dzidą
+Zbroja niedżwiedzia
+Francuska kusza
+Strzał z kuszy
+Papierowa tunika
+Lodowa maczuga
+Cios maczugą
+Nefrytowa zbroja
+Tasak rzeźnika
+Cięcie tasakiem
+Zbroja Lancelota
+Buława
+Cios buławą
+Pancerz Pazia
+Krasnoludzki młot
+Uderzenie młotem
+Krasnoludzka kloczuga
+...
+Różdżka lipowa
+Zaklęcie unieruchamające
+Magiczny Płaszcz
+Kostuch dębowy
+Klątwa natychmiastowego cierpienia
+Biała Szata
+Laska Władcy Wichrów
+Trąba powietrzna
+Szata wiatru
+Laska Ognia
+Zaklęcie zapalające
+Płomienny płaszcz
+Dzida Przeznaczenia
+Zaklęcie Tysiąca Igieł
+Peleryna niewidka
+Różdżka Maga Północy
+Zaklęcie zamrażające
+Płaszcz ze smoczych łusek
+Kostuch Wycieńczenia
+Zaklęcie wycieńczające
+Szata Kameleona
+Laska Dusz
+Klątwa defragmentacji duszy
+Peleryna z dużym 'S' w diamencie
+Różdżka czasu
+Zaklęcie pętli czasu
+Toga Mistrza
+Różdżka Zaklinacza
+Atak okolicznych zwierząt
+Toga Zaklinacza
+...
+Sztylet Brutusa
+Dźgnięcie sztyletem
+Zbroja kota
+Żądełko
+Użądlenie
+Lekka zbroja łotra
+Gladius
+Cios rzymski
+Lekka rzymska tunika
+Egipski krótki miecz
+Cios egipski
+Miedziana zbroja
+Krótki łuk elficki
+Strzał z elfickiego łuku
+Elficka zbroja
+Dwa miecze nindży
+Cios dwoma mieczami nindży
+Kostium nindży
+Szuriken
+Rzut szurikenem
+Perska tunika
+Zatruty miecz
+Cios zatrutym mieczem
+Szata ze skóry Kobry
+Bicz
+Strzał z bicza
+Skórzana zbroja
+Noże do rzucania
+Rzut nożem
+Pancerz Langusty
+Haki Modliszki
+Atak modliszki
+Kostium Modliszki
+...

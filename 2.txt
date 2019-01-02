@@ -1,0 +1,324 @@
+﻿#﻿Celi
+Budzisz się. Boli Cię głowa, nie pamiętasz jak się tu znalazłeś.\nPewnie któreś z zaklęć nie zadziałało jak należy. Jedna tylko myśl pulsuje Ci w głowie.\nMusisz wydostać się z tego miejsca.\nDopiero teraz rozglądasz się po pomieszczeniu. Jest to rodzaj celi. Zimnej i wilgotnej.\nWstajesz, podchodzisz do drzwi i chwytasz za klamkę. O dziwo drzwi nie są zamknięte.\nNie wierzysz własnemu szczęściu. Wybiegasz w ciemność…
+Długim korytarzu
+Pusta dziura o regularnym kształcie
+Czujesz przeciąg i zapach wilgoci.\nZdecydowanie nie jest to miejsce, w którym chciałbyś długo przebywać.\nZauważasz: oparte o ścianę narzędzia górnicze, odrapana komodę,\nleżący na ziemi płaszcz i ogromnego martwego karaczana.
+Zbadaj narzędzia
+O sciane oparty jest kilof, który przez nieuwagę zrzucasz sobie na stopę
+0
+10
+None
+Otwórz szufladę w komodzie
+Szuflada opornie, ale wysuwa się ukazując plan podziemi,\nktóry zdecydowanie Ci pomoże szybciej dotrzeć do celu.
+40
+0
+None
+Podnieś płaszcz
+W wewnętrznej kieszeni znajduje się fiolka z lekiem.
+5
+-15
+None
+Przyjrzyj się zdechłemu karaczanowi
+Karaczan okazuje się nie być martwy, kąsa Cię i ucieka.
+0
+15
+None
+Krótkim korytarzu
+Zamszone dębowe drzwi
+Ściany lśnią od wilgoci, a w powietrzu unosi sie zapach stechlizny.\nWzdrygasz sie. Jest to miejsce, które powinno zostać opuszczone jak najprędzej.\nZwracasz uwagę na: skrzynkę z butelkami, tajemniczą rosline doniczkowa,\nludzką czaszkę oraz stoliczek z jedną szufladką. 
+Sprawdź skrzynkę
+Przeglądając puste butelki natrafiasz na jedną pełną, jest to ampułka z eliksirem leczniczym.
+0
+-25
+None
+Zobacz co to za roślina
+Nigdy nie widziałeś podobnej rośliny.\nMa grubą łodygę z dwoma liśćmi oraz ogromny kwiatostan barwy głębokiej purpury.\nZastanawiasz się jak ona rośne w tak słabym świetle.\nNagle kwiatostan rozwiera się ukazując wielk*ą paszczę pełną ostrych jak brzytwa zębów.
+0
+0
+Rosiczka
+Obejrzyj ludzką czaszkę
+Skoro jest tu ludzka czaszka to znaczy, że w pobliżu może czaić się niebezpieczeństwo.
+35
+0
+None
+Podejdź do stoliczka
+Próbujesz otworzyć szufladę, jednak za nic się nie da. Tylko pokaleczyłeś się drzazgami.
+0
+10
+None
+Świątyni ognia
+Czerwone wrota
+Wchodząc do środka czujesz gorąc i duchotę.\nPrzed tobą rozpościera się wielka sala.\nSklepienie jest wsparte przez zdobione runami kolumny.\nWszędzie porozstawiane są pochodnie.\nNa środku stoi wielki płonący znicz.
+Włóż rękę do znicza.
+Niepewnie zbliżasz dłoń w stronę płomieni, jednak zaskakuje Cię chłód jaki emanuje od ognia.\nOkazuje się, że była to tylko iluzja, a w środku znicza znajdujesz kartkę z napisem:.
+30
+0
+Code
+Ogrzej się obok ognia
+Ciepło ognia sprawia, że czujesz się lepiej. 
+10
+-10
+None
+Zgaś pochodnie
+Nagle z dymu wyrasta przerażający demon.
+0
+0
+Demon
+Spróbuj odczytać tajemnicze runy
+Jest tam napisane: Wystrzegaj się przeklętej Czarnej Księgi.\nHmm jest to chyba jakaś wskazówka...
+20
+0
+None
+Świątynii wody
+Błękitne wrota
+Przestępujesz próg i czujesz chłód oraz wilgoć mocniejszą niż gdziekolwiek indziej.\nPomieszczenie jest wielkie i wysoko sklepione. Jest bardzo ślisko.\nPomieszczenie oświetlają magiczne lampy o łagodnym błękitnym blasku.\nW centralnej części znajduje się wielka fontanna ze szklaną figurką syreny na szczycie.
+Podejdź do fontanny
+Postanawiasz napić się wody, czujesz się jak nigdy przedtem.
+10
+-20
+None
+Obejdź salę na około
+Nie znalazłeś nic ciekawego, straciłeś tylko czas.
+0
+0
+None 
+Podnieś tabliczkę z posadzki
+Na tabliczce znajduje się wiadomość w języku nimf, a poniżej napis:
+30
+0
+Code
+Rozbij figurkę syreny
+Z rozbitych odłamków unosi się błękitny dym,\nktóry przyjmuje postać Syreny naturalnych rozmiarów.\nCo gorsza jest ona najwyraźniej wściekła.
+0
+0
+Syrena
+Świątynii powietrza
+Szare wrota
+Już od wejścia czułeś przeciąg.\nZnalazłeś się w bardzo długiej i niezbyt szerokiej sali.\nSufit ginie w ciemności, a samo pomieszczenie oświetlone jest od posadzki z\nlśniących kryształów, kryształy, a na scianach powiewją na wietrze poszarpane sztandary Władcy Wichru Północy.\nWzdrygasz się od tego lodowatego podmuchu. Na środku dostrzegasz ołtarz.
+Podejdź do ołtarza.
+Na ołtarzu leży kilka fiolek z napisem “Oto podmuch Jego potęgi, kto spożywa Jego podmuch ma oddech świeży na wieki”. Zażywasz jedną, i dzieje się tak jak głosi napis.
+10
+-10
+None
+Zbadaj ściany
+Ściany są pokryte rozciągniętym pismem wyglądającym jakby ktoś bez przerwy dmuchał na atrament. Udaje Ci się odczytać napis:
+30
+0
+Code
+Poszukaj źródła wiatru
+Próbujesz iść pod wiatr, ale im dalej idziesz tym wieje on mocniej.\nPo chwili przewracasz się pod jego naporem i mocno uderzasz w filar.
+0
+10
+None
+Wyzwij Władcę Wichru Północy
+Wzywasz Władcę Wichru Północy
+0
+0
+Wicher
+Świątynii ziemi
+Czarne wrota
+Przechodzisz przez wrota i wchodzisz w ciemność.\nCzujesz zapach świeżej ziemi oraz wilgoć i stęchliznę.\nJednym zaklęciem przywołujesz magiczną kulę, która rozświetla pomieszczenie.\nJesteś w nisko sklepionej sali ze sporą ilością filarów.\nŚciany pokryte są napisami, a w centralnej części znajduje się bezdenna dziura w posadzce.
+Wskocz do dziury
+Spadasz bez końca, to zakłęta dziura. Przez resztę życia żałujesz tej decyzji.
+0
+10000
+None
+Przeczytaj napisy
+Są to bez wątpienia wskazówki zapisane krasnoludzkimi runami. Udaje Ci się odzczytać także napis:
+30
+0
+Code
+Podnieś artefakt
+To nie jest zwykły przedmiot, ale potężny magiczny artefakt.
+0
+0
+Item
+Sprawdź czy te stalaktyty są tak ostre jak wyglądają
+Skaleczyłeś się stalaktytem, brawo Ty.
+0
+10
+None
+Sali tortur
+Stalowe wzmocnione drzwi
+Przechodzisz przez próg i od razu wyczuwasz ponurą aurę tego miejsca, ktoś tutaj cierpiał, wielokrotnie.\nTo pomieszczenie jest aż przesiąknięte cierpieniem i bólem.\nNa środku znajduje się stół do rozciągania, pod ścianą krzesło z pasami na podłokietnikach i nogach.\nZ sufitu zwisają haki, a na ziemi leżą różne ocęgi.\nWszystko poplamione jest zaschniętą krwią, nie tylko ludzką.\nJest to zdecydowanie sala tortur.
+Podejdź do stołu
+Na stole znajdujesz magiczny artefakt, będzie przydatny w walce.
+0
+0
+Item
+Podnieś obcęgi
+Przytrzasnąłeś sobie palca.
+0
+10
+None
+Podnieś strzykawkę
+Jest to specjalne serum, które działa leczniczo uniemożliwiając ofiarom przedwczesną śmierć.
+0
+-20
+None
+Obejrzyj znaki napisane krwią
+Możesz odczytać napis:
+30
+0
+Code
+Magazynie
+Dwuskrzydłowe duże drzwi
+Wchodzisz do pomieszczenia pełnego regałów i pudeł oraz innych rupieci.\nCzujesz zapach stęchlizy i starych mebli.
+Podejdź do sekretarzyka.
+W szufladzie sekretażyka znajdujesz list z napisem:
+30
+0
+Code
+Zbadaj biurko.
+Przytrzasnasnąłeś sobie palce szufladą.
+0
+5
+None
+Przejrzyj pudła
+Znajdujesz fiolke z miksturą leczniczą.
+5
+-15
+None
+Zajrzyj pod regał
+Pod regałem był karaczan i Cię dziabnął.
+0
+15
+None
+Pracownii alchemicznej
+Gazoszczelne drzwi
+Zaraz po przekroczeniu progu uderzył Cię zapach chemikaliów.\nStarasz nieoddychać tymi oparami.\nPod ścianą znajduje się aparatura alchemiczna, a naprzeciwko wejścia szafka na składniki.
+Spróbuj fiolki z niebieskim płynem
+Zrobiło Ci się słabo, zacząłeś się krztusić, nie było to nic dobrego.
+5
+15
+None
+Spróbuj buteleczki z zieloną miksturą
+Poczułeś się świetnie, była to mikstura lecznicza.
+10
+-30
+None
+Spróbuj probówki z czerwonym eliksirem
+Poczułeś się jakby ktoś udzerzył Cię w brzuch.\nZabrakło Ci tchu, zacząłeś osuwać się na podłogę.\nResztkąmi sił wypowiedziałeś zaklęcie, które uratowało Ci życie.
+0
+20
+None
+Spróbuj ampułki z przezroczystą substancją
+Poczułeś się jak nowo narodzony. Trafiłeś na eliksir regeneracji, i to wyjątkowo dobry.
+10
+-40
+None
+Bibliotece ksiąg magicznych
+Czerwone wyciszone drzwi
+Wchodzisz do środka. Pierwsze co Cię zaskakuje to cisza, miejsce to jest idealnie wyciszone.\nPrzez całe pomieszczenie ciągną się półki z księgami.\nCzujesz pulsującą w nich magię. 
+Przeczytaj księgę w czerwonej oprawie
+Nauczyłeś się przydatnego zaklęcia bojowego.
+45
+0
+None
+Przeczytaj księgę w czarnej oprawie
+Ta księga była przekłęta i wyssała część Twojej energii życiowej.
+0
+20
+None
+Przeczytaj księgę w żółtej oprawie
+Ta księga została obłożona zaklęciami ochronnymi, które zrobiły Ci sporą krzywdę.
+0
+15
+None
+Przeczytaj księgę w niebieskiej oprawie
+Nauczyłeś się przydatnego zaklęcia leczniczego.
+20
+-20
+None
+Sali do rytuałów
+Odrapane drzwi
+Od kiedy tylko przekroczyłeś próg pomieszczenia odczuwasz nieuzasadniony niepokój.\nCzujesz, że ktoś lub ktoś lub coś Cię obserwuje. Na posadzce dostrzegasz namalowany krwią pentagram.\nPatrzysz na ścianę i Twoje serce zamiera, a sztylet strachu przeszywa twe serce.\nNa ścianach widnieją symbole Upadłych.\nWiesz, że masz mało czasu nim Oni się przebudzą…
+Podejdź do pentagramu
+Podchodzisz do pentagramu, a czarne świece w jego wierzchołkach zapalają się.\nWiesz, że już jest zapóźno na odwrócenie zaklęcia.\nMusisz stawić czoła Upadłemu...
+0
+0
+Upadły
+Podnieś artefakt
+Podnosisz przedmiot. Zapewnie był wykorzystywany w przeklętych rytuałach.\nBardzo ciemna magia…
+0
+0
+Item
+Zbadaj symbole
+Między symbolami dostrzegasz przydatne zaklęcie.
+35
+0
+None
+Podnieś medalion
+Gdy tylko Twoje palce dotknęły medalionu, zacząłeś odczuwać ogromny ból.\nTakich medalionów używano przy wzywaniu Upadłych, którzy żywią się cierpieniem…
+0
+15
+None
+Marmurowej sali
+Białe drzwi
+Wchodzisz do środka. Podniosłość tego pomieszczenia czuć nawet bez magii.\nMarmurowa posadzka, marmurowe ściany, marmurowe kolumny…\nNa przeciwległej ścianie dostrzegasz tekst w języku elfów oraz 4 dźwignie.\nNapis głosi:\n”Oto święty ciąg przeklętych cyfr: 1, 6, 21, 62.\nJaka będzie kolejna cyfra świętego ciągu?”
+Dźwignia z liczbą “81”
+Źle wybrałeś…
+0
+15
+Sfinks
+Dźwignia z liczbą “105”
+Brawo! Dobra odpowiedź!\nZ sufitu spada przedmiot.
+80
+0
+Item
+Dźwignia z liczbą “91”
+Źle wybrałeś…
+0
+15
+Sfinks
+Dźwignia z liczbą  “115”
+Źle wybrałeś…
+0
+15
+Sfinks
+Skarbcu
+Wzmocnione złote drzwi
+Jeszcze zanim przykroczyłeś póg pomieszczenia dostrzegasz blask bogactwa.\nSala wręcz nim ocieka. Ściany, podłoga, sufit - wszystko ze szczerego złota.\nPod ścianą znajduje się spory kufer.
+Zbadaj kufer
+W kufrze znajdujesz eliksir leczniczy.
+10
+-20
+None
+Podnieś jeden z leżących na ziemi artefaktów
+Zdobywasz potężny magiczny artefakt
+0
+0
+Item
+Podejdź do ściany
+Ściana jest tak wypolerowana, że nie zauważasz kiedy wchodzisz w nią i właśnie stłukłeś sobie nos.
+0
+10
+None
+Przyjrzyj się swojemu odbiciu
+Patrzysz w złoto jak w lustro i dostrzegasz skradającego się za Twoimi plecami potwora.
+0
+0
+Strażnik
+Pracownii rużdżkarskiej
+Lipowe drzwi
+Przestępujesz próg i znajdujesz się w niewielkim pomieszczeniu,\npełnym narzędzi do obróbki drewna oraz magicznych przyrządów. Czujesz podekscytowanie.\nTo staroświecka pracownia rużdżkarska.
+Podejdź do warsztatu
+Jesteś nieuważny i zrzucasz na siebie regał.
+0
+10
+None
+Podnieś dłuto
+Przez nieuwagę skaleczyłeś się dłutem.
+0
+5
+None
+Podnieś artefakt
+Zdobywasz niezwykle potężny przedmiot magiczny.
+10
+0
+Item
+Przejrzyj szufladki
+W szufladzie znajdujesz eliksir leczniczy
+10
+-15
+None

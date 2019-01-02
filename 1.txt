@@ -1,0 +1,324 @@
+﻿#Ogrodach zamkowych
+Budzisz się na zimnej i mokrej od rosy trawie. Nie masz pojęcia jak się tu znalazłeś.\nOstatnie co sobie przypominasz to rozpoczęcie turnieju i ostrą szarżę na przeciwnika.\nChłód bardzo wczesnego poranka sprawia, że wręcz trzęsiesz się z zimna.\nRozglądasz się dookoła. Znajdujesz się w małym, przyzamkowym sadzie  otoczonym murem.\nPrzeczucie ci mówi, że im szybciej wydostaniesz się z tego tajemniczego miejsca, tym lepiej…
+Sporych rozmiarów komnacie
+Duże, dwuskrzydłowe drzwi
+Komnata robi na Tobie spore wrażenie.\nNajprawdopodobniej to tu kiedyś przyjmowano gości przychodzących na licznie organizowane bale.\nDostrzegasz porozstawiane wieszaki, a na nich lekko przykużone szaty i innego rodzaju odzienie.\nW kącie stoi drewniana skrzynia, a nad nią wisi lampion.
+Zbadaj ubranie
+Ubierasz jeden z płaszczy zawieszonych na wieszakach.\nTeraz jest ci naprawdę ciepło.
+0
+-30
+None
+Zbadaj skrzynie
+Podchodzisz do skrzyni. Próbujesz ją otworzyć, ale pordzewiałe zawiasy nie puszczają wcale tak łatwo.\nTracisz sporo energii. W koću udaje ci się otworzyć skrzynię, ale w środku nie znajdujesz nic wartościowego.\nStraciłeś tylko cenny czas i energię.
+0
+10
+None
+Zbadaj lampion
+Zdejmójesz lampion ze ściany, w nadziei, że uda ci się go zapalić.\nJednak nic z tego. Zapałki, które nie wiedzieć czemu miałeś w kieszeni, zamokły.
+10
+0
+None
+Przejrzyj się w lustrze
+Zdajesz sobie sprawę jak brudny i jednocześnie cały we krwi jesteś.\nPróbójesz wytrzeć chociaż twarz. Nagle w lustrze dostrzegasz, że nie jesteś sam.\nZa Tobą stoi dziwnie ubrany jegomość i powoli wyciąga zza pleców sztylet.
+0
+0
+Jegomość
+Zbrojowni
+Okute żelazem drzwi
+Wchodząc rozglądasz się dookoła.\nMońa tu znaleźć dużo ciekawych przedmiotów.\nWidzisz dużą skrzynie i stół a na nim zdobiony miecz.
+Zajrzyj do skrzyni
+Zdobyłeś cenny przedmiot, który może ci się potem przydać.
+0
+0
+Item
+Podnieś miecz ze stołu
+Natychmiast wypuszczasz miecz z rąk.\nMiecz okazał się objęty klątwą.\nTwoja skóra w kontakcie z nim zachowała się jak podgrzane masło.\nCzujesz jak Twoja ręka mocno krwawi.
+0
+25
+None
+Rozglądnij się za przydatnym wyposażeniem
+Wśród starych pancerzy i tępych mieczy, natrafiasz na prawdziwy okaz
+10
+0
+Item
+Podejdź do ściany
+Na ścianie wisi sporo różnego rodzaju planów związanych z kuciem broni.\nUdaje ci się część zapamiętać.\nJeśli uda ci się wydostać będziesz mógł przekazać je swojemu panu.
+30
+0
+None
+Lochu
+Kamienne wejście zamykane opuszczaną kratą.
+Wzdrygasz się. W kącie pod ścianą zauważasz szczątki kości nieznanego pochodzenia.\nJest bardzo wilgotno i duszno. Z sufitu skapuje woda.\nNa pierwszy rzut oka nie ma tu nic co mogłoby ci się przydać.\nJednak po chwili, gdy oczy nieco przyzwyczajają się do panującego tu półmroku\ndostrzegasz zapisaną na ścianie wapnem cyfrę.
+Podejdź do ściany
+Podchodząc potykasz się o leżący na podłodze gruz. Zraniłeś się w kolano.\nTeraz jednak możesz odczytać napis na ścianie:
+30
+10
+Code
+Zbadaj kratę 
+Jesteś bardzo ciekaw mechanizmu, dzięki któremu można podnosić kratę.\nJesteś do tego stopnia ciekawy, że zapominając o ostrożności ze wszystkich sił próbujesz ją opóścić.\nUdaje ci się to. Krata z hukiem spada prosto na twoją stopę.
+0
+20
+None
+Schyl się
+Pod stopami dojrzałeś coś ciekawego. Podnosisz to i nie wierzysz własnym oczom.
+0
+0
+Item
+Napij się skapującej wody
+Woda jakoś dziwnie smakuje i zaczynasz żałować swojej decyzji.\nNie działa najlepiej na twój organizm.
+0
+15
+None
+Sali tronowej
+Potężne, pozłacane drzwi
+Wchodzisz do olbrzymiej komnaty. Całe wnętrze jest bardzo bogato zdobione.\nNa ścianach wiszą chorągwie i sztandary.\nW boku sali znajduje się rzeźba przedstawiają a rycerza.
+Dotknij rzeźby
+Z wnę trza kamienia słychać pomruk.\nPrzyzwaęś ducha, który nie jest rad z Twojego towarzystwa.
+0
+0
+Duch
+Usiądź na tronie
+Wyobrażasz sobie jak by to było rządzić z tego miejsca całym królestwem.\nTwoje morale od razu podnoszą się.
+40
+-5
+None
+Zbadaj sztandary
+Po kolei oglądasz sztandary. Jeden ci się wyjątkowo spodobał.\nPostanawiasz zabrać go ze sobą. Jednak tym działaniem zakłucasz spokój ducha króla.\nAby zabrać sztandar musisz go najpierw pokonać.
+0
+0
+Duch króla
+Podejdź do żyrandola 
+Wielkie diamentowe żyrandole zwieszają się dość nisko nad ziemią.\nSą w zasięgu twoich rąk. Zawsze chciałeś to zrobić.\nNie mija chwila jak leżysz obok zupełnie rozbitego żyrandola z bolącymi plecami.\nMimo wszystko warto było…
+20
+15
+None
+Kuchni
+Białe, drewniane drzwi
+Rozglądasz się po sporej wielkości pomieszczeniu.\nW zasadzie całą jego powieszchnię zajmują blaty.\nNa Ścianach porozwieszane są różnej wielkości garnki i chochle.\nPo Twojej lewej stronie stoją drewniane beczki, a nad nimi wiszą pozamykane szafki.
+Zbadaj beczkę
+Po podważeniu górnej części beczki okazuje się, że w środku znajduje się pyszne, stare wino.\nOczywiście nie wypada się nie poczęstować.\nWino Cię rozgrzewa i dodaje odwagi.
+20
+-30
+None
+Zbadaj szafkę
+Otwierasz szafkę w nadziei znalezienia jakiegoś jedzenia, ale jedyne co ukazuje się twoim oczom to zdechły szczur.\nJego zapach powoduje, że robi ci się niedobrze.\nMusisz usiąść by dojść do siebie.
+0
+5
+None
+Otwórz klapę w podłodze
+Potykasz się i wpadasz do niewielkiej jamy.\nLeżysz na przegniłych ziemniakach. Mocno się potłukłeś, ale opłaciło się.\nZauważnasz karteczkę z napisem:
+30
+0
+Code
+Zajrzyj do wielkiego garnka
+W garnku nie ma niczego ciekawego. Jest zupełnie pusty.
+1
+0
+None
+Jadalni
+Drewniane drzwi z wyrzeźbionym widelcem i łyżką
+Masz wrażenie jakby to miejsce zostało co dopiero opuszczone przez biesiadników.\nOgromny drewniany stół w kształcie prostokąta po brzegi zastawiony jest\nróżnego rodzaju naczyniami i srebrną zastawą.
+Po rozglą daj się wokoło
+Znajdujesz ciekawy przedmiot.
+0
+0
+Item
+Spróbuj jedzenia że stołu
+Zjadasz resztki jedzenia, które ostały się po uczcie szczurów.\nNie był to najlepszy pomysł. Zaczyna boleć Cię brzuch.
+0
+15
+None
+Podnieś talerz
+Pod talerzem znajdujesz wyrytą w drewnie cyfrę:
+30
+0
+Code
+Pchnij ścianę
+W zamkach tak już jest, że nigdy nic nie wiadomo. Sam wiesz o tym najlepiej.\nJednak w tym wypadku ściana okazała się być poprostu ścianą.
+0
+0
+None
+Sali balowej
+Ogromne, pozłacane drzwi
+Rozglądasz się po olbrzymiej sali, w której niegdyś odbywały się liczne przyjęcia i bale.\nNa ścianach wiszą obrazy, a na podłodze leży sporo małych karteczek ze znajdującymi się na nich imionami gości.\nPod ścianami poustawiane są stoliki, na których zapewne znajdowały się przekąski i napoje.
+Zbadaj obraz
+Odchylasz obraz w nadziei zobaczenia ukrytej za nim tajnej skrytki,\nlecz pordzewiałe już, wiszące tu od setek lat haki puszczają i wielki obraz spada ci prosto na głowę.
+0
+25
+None
+Podnieś karteczki
+Zbierasz z podłogi porozrzucane karteczki.\nW większości znajdują się na nich imiona możnowładców, ale na jednej znajduje się tajemnicza napis:
+30
+0
+Code
+Podejdź do stanowiska orkiestry
+Rozglądasz się w poszukiwaniu czegoś, co mogło by ci się przydać.\nNiestetu oprócz poprzewracanych bębnów i innych instrumentów nic tutaj nie ma.
+0
+0
+None
+Zbadaj stoliki
+Na stolikach oprócz kilku butelek nic nie ma. W jednej jest nawet jeszcze zawartość.
+0
+-20
+None
+Kaplicy zamkowej
+Przeszklone drzwi
+Czujesz tajemniczy klimat grozy tego miejsca.\nStare drewniane ławki trzeszczą złowieszczo.\nWidoczność jest bardzo mała, z powodu ciągle tlącego się kadzidła.
+Zgaś kadzidło
+Nagle słyszysz szmer. Odwracasz się.\nNie wiadomo jak się tutaj pojawił, ale zdecydowanie nie ma przyjaznych zamiarów. 
+0
+0
+Mnich
+Usiądź w ławce
+Chwilę odpoczywasz i jednicześnie znajdujesz zagatkową książeczkę.\nMoże ci się do czegoś przydać.
+15
+0
+None
+Pomódl się 
+Twoja modlitwa podoba się Bogu, który zsyła na Ciebie błogosławieństwo. 
+40
+-50
+None
+Podejdź do ołtarza
+Złote kielichy mogłyby być dobrym łupem, ale jesteś honorowym rycerzem, przestrzegającym kodeksu,\nwięc zostawiasz je tam gdzie leżą.
+20
+0
+None
+Bibliotece zamkowej
+Ciemnobrązowe, drewniane drzwi
+Jest tu cicho i spokojnie. Drewniana podłoga delikatnie skrzypi pod twoimi stopami.\nW którą stronę nie spojrzysz wszędzie znajdują się regały z książkami.
+Zbadaj regał po prawej
+Z zainteresowaniem oglądasz kolejne półki z książkami.\nJedna szczególnie przyciąga twoją uwagę. Jest to wielka księga z zaklęciami.\nNigdy jakoś specjalnie się tymi sprawami nie interesowałeś, więc otwierasz księgę na losowej stronie i odczytujesz kilka wersów.\nTo był błąd. Nagle przez okno wlatuje piorun, który powala Cię na ziemię.
+0
+40
+None
+Zbadaj regał po lewej
+Wszystkie książki wydają ci się podobne. Oprócz jednej.\nOtwierasz ją i przeglądasz. Jedna strona jest zupełnie pusta i widnieje na niej napis:
+30
+0
+Code
+Zbadaj szuflady w biurku
+Otwierasz jedną z szuflad w biurku i nie wierzysz własnym oczom.
+0
+0
+Item
+Zbadaj papiery na biurku
+Przeglądasz dokładnie kolejne kartki, jednak nie znajduje się na nich nic ciekawego.
+0
+0
+None
+Łaźniach królewskich
+Marmurowe drzwi
+Łaźnia cała wyłożona jest marmurowymi kafelkami.\nZnajduje się tu kilka pewnego rodzaju basenów.\nW kącie piętrzą się stosy ręczników.
+Podejdź do basenu
+Podchodząc oczywiście poślizgnąłeś się na idealnie gładkim marmurze i wylądowałeś po pas w wodzie.\nJesteś totalnie przemoczony i zaczyna ci być badzo zimno.
+0
+20
+None
+Zbadaj stos ręczników
+Nic ciekawego nie dostrzegasz, ale aby upewnić się czy przypadkiem nie ma jakiegoś tajnego przejścia,\npodnisisz kilka ze stosu. Nagle za Tobą pojawia się zdenerwowana do granic możliwości sprzątaczka.\nBez walki się nie obejdzie.
+0
+0
+Sprzątaczka
+Zbadaj szafkę
+W szafce znajdują się rzeczy takie jak mydła i wonności. Zabierasz kilka ze sobą.\nW końcu higiena ważna rzecz.
+15
+0
+None
+Zbadaj wnękę w ścianie
+Wnęka okazuje się być przejściem do groty solnej.\nCzyste powietrze zjonizowane dzięki soli ma właściwości lecznicze.\nPozostajesz tam przez dłuższą chwilę.
+0
+-15
+None
+Cmentarzu
+Okute żelazem drzwi
+Wychodzisz na świeże powietrze. Znajdujesz się na pewnego rodzaju dziedzińcu porośniętym wysoką trawą.\nWszystko dookoła jest jakby szare, bez życia.\nNagle dostrzegasz, że z ziemi wystają krzyże. To nie może być nic innego. To cmentarz…
+Podejdź do najbliższego grobu
+Podchodzisz powoli i nic się nie dzieje…
+0
+0
+None
+Podejdź do dalszego grobu
+Nagle płyta grobu, do którego podszedłeś odsuwa się, a ze środla wychodzi nieumarły.
+0
+0
+Nieumarły
+Schyl się
+W trawie leży jakiś przedmiot. Podtosisz go. Zastanawiasz się jak mógł się tu znaleźć.
+0
+0
+Item
+Rzuć kamieniem w ciemność
+Nie wiesz po co, ale wyrzucasz podniesiony z ziemi kamień. Mija chwila.\nNajdziwniejsze jest to, że nie słyszałeś uderzenia kamienia o ziemię.\nNagle ten sam kamień trafia Cię prosto w głowę. Nawet nie chcesz wiedzieć jak to się stało.
+0
+30
+None
+Ukrytej komnacie
+Tajemne przejście ukryte w ścianie
+Znajdujesz się w małym pomieszczeniu. Jest tu zaledwie kilka przedmiotów.\nWarto sprawdzić czy coś ci się nie przyda.
+Zbadaj stolik
+Na stoliku nie ma w zasadzie niczego oprócz kałamarza i pióra. Zaglądasz jeszcze pod blat.\nMasz szczęście, że na to wpadłeś, bo dostrzegasz wyryty napis:
+30
+0
+Code
+Zbadaj szafkę 
+Otwierając szafkę wypłoszyłeś śpiące nietoperze.\nPrzestraszyłeś się tak bardzo, że nawet nie zaglądnąłeś do środka.
+0
+0
+None
+Rozejrzyj się 
+Masz szczęście. W kącie zauważasz coś bardzo przydatnego.
+0
+0
+Item
+Przejdź się po pomieszczeniu
+Chcesz sprawdzić czy aby nic nie umknęło Twojej uwagi.\nIdąc asekuracyjnie przytrzymujesz się ściany i rozcinasz sobie rękę o wystający gwóźdź.
+0
+15
+None 
+Skarbcu
+Wzmacniane, masywne drzwi
+Rozglądasz się dookoła. Blask sztabek złota aż cie oślepia.\nOprócz kosztowności znajduje się tu również mały składzik alchemiczny. \nŻałujesz, że nie masz przy sobie żadnej torby.
+Ukradnij sztaby złota
+Niestety nic nie jest takie proste. Zza narożnika wychodzi wartownik.\nRaczej nie przystanie na twoją propozycję pół na pół.
+0
+0
+Wartownik
+Weź diamenty
+Upychasz diamenty w kieszeniach. Byle więcej.\nZaczynasz marzyć o własnym koniu.\nTeraz będze cie na niego stać
+30
+0
+None
+Sprawdź pancerną szafkę
+Niestety siła twoich bicepsów nie wystarcza na wyłamanie drzwiczek tej szafki.\nMocowałeś się z nią ponad 15 minut i mocno się zmęczyłeś.
+0
+15
+None
+Napij się jednego z eliksirów
+Czujesz jak ciepło rozchodzi się po całym Twoim ciele.
+0
+-30
+None
+Sypialni królewskiej
+Bogato zdobione drzwi 
+Znajdujesz się w sypialni królewskiej. Świadczy o tym, stojące na środku, wielkie łoże z baldachimem.\nOprócz tego za kotarą jak się domyślasz znajduje się garderoba.
+Połóż się 
+Jesteś na tyle zmęczony, że krótka drzemka na pewno ci nie zaszkodzi.
+0
+-30
+None
+Zbadaj garderobę
+W garderobie nie znajdujesz nic oprócz ubrań. Kto by się spodziewał…
+0
+0
+None
+Zbadaj Toaletkę
+Na Toaletce stoi duże lustro. Przeglądasz po kolei szufladki z biżuterią i zastanawiasz się do kogo mogła należeć.\nNie musisz długo czekać na odpowiedź,\nbo nagle pojawia się duch oburzonej królowej.
+0
+0
+Duch królowej
+Zbadaj przestrzeń pod łóżkiem
+Zaglądasz pod to jakże nienaturalnie duże łoże.\nJednak oprócz pająka, który gryzie Cię w palec nie ma tam nic.
+0
+15
+None
