@@ -9,7 +9,7 @@ class Structure:
         self.id_room = 1
         self.print_fast_id = 0
         self.end = False
-        Load.FILE_NAME = filename
+        Load.FILE = filename
         Load.load()
         os.system('cls')
         Load.room.start()

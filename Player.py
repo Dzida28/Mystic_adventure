@@ -22,8 +22,8 @@ class Player:
         self.available_attack_names = []
         self.available_armors = []
 
-    def attack(self, enemy_name, senemy_hp):
-        enemy_hp = senemy_hp
+    def fight(self, enemy_name, full_enemy_hp):
+        enemy_hp = full_enemy_hp
 
         while True:
             time.sleep(0.05)
@@ -62,7 +62,7 @@ class Player:
                 Addons.slow_print("\nChybiłeś", 0.05)
 
             if enemy_hp <= 0:
-                tmp = random.randint(int(senemy_hp * (self.lvl / 10 + 1)) - 40, int(senemy_hp * (self.lvl / 10 + 1)))
+                tmp = random.randint(int(full_enemy_hp * (self.lvl / 10 + 1)) - 40, int(full_enemy_hp * (self.lvl / 10 + 1)))
                 Addons.slow_print("Wygrałeś!", 0.05)
                 self.update_lvl(tmp)
                 break
@@ -77,7 +77,7 @@ class Player:
 
     def update_lvl(self, value):
         time.sleep(0.05)
-        levelup = False
+        level_up = False
         old_max_hp = self.max_hp
         value = int(value * (self.lvl / 4 + 0.75))
 
@@ -88,9 +88,9 @@ class Player:
             self.exp -= self.lvl * 100
             self.lvl += 1
             self.max_hp += 10
-            levelup = True
+            level_up = True
 
-        if levelup:
+        if level_up:
             print("*" * 20)
             Addons.slow_print("Nowy poziom!\nTwój poziom: " + str(self.lvl) + """\n\nJesteś w pełni wyleczony.
 Twój maksymalny poziom hp został zwiększony o """ + str(self.max_hp - old_max_hp) + "\n", 0.05)
@@ -161,7 +161,7 @@ Twój maksymalny poziom hp został zwiększony o """ + str(self.max_hp - old_max
                 else:
                     break
 
-    def load_names(self, amount):
+    def load_weapons(self, amount):
         with open("weapon.txt", encoding='utf-8') as f:
             lines = []
             tmp = 1

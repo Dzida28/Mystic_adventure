@@ -110,7 +110,7 @@ def score_table():
             break
 
 
-def counting():
+def countdown():
     print("\n")
     for i in range(3):
         slow_print(str(3 - i) + "...\n", 1, newline=False)

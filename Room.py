@@ -26,5 +26,5 @@ class Room:
         print("-" * 20)
         Addons.slow_print(self.rooms_doors[0], 0.001)
         Addons.slow_print("W kieszeni znajdujesz kartkę z napisem: " +
-                          Code.get_rand_num() + "Masz przeczucie, że będzie to istotna informacja.", 0.001)
+                          Code.get_code_digit() + "Masz przeczucie, że będzie to istotna informacja.", 0.001)
         input("\n\nWciśnij ENTER, aby kontynuować...")

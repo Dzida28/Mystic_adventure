@@ -5,8 +5,15 @@ import Code
 import Addons
 
 
-FILE_NAME = ["1.txt", "2.txt", "3.txt", "boss.txt", "weapon.txt"]
-for i in FILE_NAME:
+FILES = [
+    '1.txt',
+    '2.txt',
+    '3.txt',
+    'boss.txt',
+    'weapon.txt'
+    ]
+
+for i in FILES:
     try:
         open(i)
     except FileNotFoundError:
@@ -20,7 +27,7 @@ sec = 0.05
 while True:
     difficulty = None
     player = None
-    klasa = None
+    player_class = None
 
     os.system('cls')
     Addons.menu(sec)
@@ -65,9 +72,9 @@ while True:
             print("1. Wojownik")
             print("2. Mag")
             print("3. Łotrzyk")
-            klasa = input("\n>>>")
+            player_class = input("\n>>>")
 
-            if klasa == "1":
+            if player_class == "1":
                 player = Player((4 - difficulty) * 60)
                 player.add_weapon("Noga", 11, 99, 5, "Kopnięcie przeciwnika")
                 player.add_weapon("Miecz pazia", 40 - (difficulty - 1) * 5, 70 - (difficulty - 1) * 5, 5,
@@ -75,7 +82,7 @@ while True:
                 player.add_armor("Zardzewiała zbroja", 15)
                 break
 
-            elif klasa == "2":
+            elif player_class == "2":
                 player = Player((4 - difficulty) * 40)
                 player.add_weapon("Ręce", 11, 99, 5, "Proste zaklęcie rażące")
                 player.add_weapon("Dębowa różdżka", 50 - (difficulty - 1) * 5, 80 - (difficulty - 1) * 5, 15,
@@ -83,7 +90,7 @@ while True:
                 player.add_armor("Stara szata", 5)
                 break
 
-            elif klasa == "3":
+            elif player_class == "3":
                 player = Player((4 - difficulty) * 50)
                 player.add_weapon("Ręka", 11, 99, 5, "Sierpowy")
                 player.add_weapon("Sztylet złodziejaszka", 40 - (difficulty - 1) * 5, 75 - (difficulty - 1) * 5, 10,
@@ -91,24 +98,23 @@ while True:
                 player.add_armor("Skurzana tunika", 10)
                 break
 
-            elif klasa == "0":
+            elif player_class == "0":
                 break
 
         if player is not None:
-            player.load_names(int(klasa))
-            structure = Structure(klasa + ".txt")
+            player.load_weapons(int(player_class))
+            structure = Structure(player_class + ".txt")
 
-            # wczytywanie obrazka z bossem
-            Code.boss_name = ['Deathwing', 'Czarnoksieznik', 'Ksiezniczka'][int(klasa) - 1]
+            Code.boss_name = ['Deathwing', 'Czarnoksieznik', 'Ksiezniczka'][int(player_class) - 1]
             Code.boss_pict = ""
             with open("boss.txt", "r") as f:
                 tmp = 0
                 for line in f:
                     if line[:3] == "x x":
                         tmp += 1
-                    if tmp > int(klasa) * 2:
+                    if tmp > int(player_class) * 2:
                         break
-                    if tmp > int(klasa) * 2 - 2:
+                    if tmp > int(player_class) * 2 - 2:
                         Code.boss_pict += line
             f.close()
 

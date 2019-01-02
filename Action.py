@@ -66,7 +66,7 @@ class Action:
                 self.description[num] = "*Wykonano*"
 
                 if self.encounter[num][:4] == "Code":
-                    Addons.slow_print(Code.get_rand_num(), 0.05)
+                    Addons.slow_print(Code.get_code_digit(), 0.05)
 
                 if self.encounter[num][:4] == "Item":
                     if random.randint(1, len(player.available_armors) + len(player.available_weapons)) + 1 > len(
@@ -86,7 +86,7 @@ class Action:
                 if self.encounter[num][:4] not in ["None", "Item", "Code"]:
                     Addons.slow_print(self.encounter[num] + " atakuje Cię!", 0.01)
                     input("\nWciśnij ENTER, aby kontunuować...")
-                    player.attack(self.encounter[num], random.randint(7 + player.lvl, 11 + player.lvl) * 10)
+                    player.fight(self.encounter[num], random.randint(7 + player.lvl, 11 + player.lvl) * 10)
                     if player.dead:
                         break
 

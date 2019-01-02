@@ -4,7 +4,7 @@ from Room import Room
 from Action import Action
 
 
-FILE_NAME = ""
+FILE = ""
 
 room = Room()
 action = []
@@ -17,7 +17,7 @@ def load():
     room = Room()
     action = []
 
-    with open(FILE_NAME, "r", encoding='utf-8') as f:
+    with open(FILE, "r", encoding='utf-8') as f:
         data = f.readlines()
 
     if data is not None and len(data) == 324:
@@ -41,7 +41,6 @@ def load():
 
             action[len(action)-1].randomize()
 
-        # losowanie
         names = []
         doors = []
         descriptions = []

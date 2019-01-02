@@ -22,7 +22,7 @@ def generate(amount):
         unknown.append("*" * i + code[i] + "*" * (len(code) - i - 1))
 
 
-def get_rand_num():
+def get_code_digit():
     global unknown
     if len(unknown) > 0:
         num = r.choice(unknown)
@@ -46,7 +46,7 @@ def return_known_code():
 
 def ending(player):
     sec = 0.005
-    Addons.counting()
+    Addons.countdown()
     Addons.slow_print("\nWylądowałeś w pokoju przeznaczenia!", 0.05)
     input("\nWciśnij ENTER, aby kontunuować...")
     while True:
@@ -74,7 +74,7 @@ z którego tu przyszedłeś.""", sec)
                 return 1
 
         elif p == "2":
-            Addons.counting()
+            Addons.countdown()
             Addons.slow_print("Portal przenosi Cię z powrotem do pokoju startowego.\n", 0.05)
             input("\nWciśnij ENTER, aby kontunuować...")
             return 0
@@ -82,16 +82,16 @@ z którego tu przyszedłeś.""", sec)
 
 def guess(player):
     print("\nPodaj kod")
-    code1 = input(">>>")
+    code_input = input(">>>")
 
-    if code == code1:
+    if code == code_input:
         Addons.slow_print("\nPodałeś właściwy Kod!\n", 0.05, newline=False)
         player.update_lvl(50)
         Addons.slow_print("Wrota otwierają się z wielkim piskiem...\n" + boss_name + " chce pożreć Twoją duszę!", 0.1)
         Addons.slow_print(boss_pict, 0.0001)
         input("\nWciśnij ENTER, aby kontunuować...")
 
-        player.attack(boss_name, int(score_multiplier * player.max_hp / 9) * 10)
+        player.fight(boss_name, int(score_multiplier * player.max_hp / 9) * 10)
         if not player.dead:
             Addons.slow_print("Teraz już nic nie stoi na przeszkodzie, aby opuścić to miejsce.\nOdzyskałeś wolność...",
                               0.05)
