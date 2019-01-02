@@ -93,7 +93,8 @@ def guess(player):
 
         player.attack(boss_name, int(score_multiplier * player.max_hp / 9) * 10)
         if not player.dead:
-            Addons.slow_print("Teraz już nic nie stoi na przeszkodzie, aby opuścić to miejsce.\nOdzyskałeś wolność...", 0.05)
+            Addons.slow_print("Teraz już nic nie stoi na przeszkodzie, aby opuścić to miejsce.\nOdzyskałeś wolność...",
+                              0.05)
             Addons.print_congrats()
             print("\nKONIEC GRY")
             player.save_score(score_multiplier)

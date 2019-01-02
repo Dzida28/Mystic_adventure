@@ -33,7 +33,7 @@ while True:
         Addons.score_table()
 
     elif x == '3':
-        Addons.credits()
+        Addons.creators()
 
     elif x == '4':
         exit(0)
@@ -70,21 +70,24 @@ while True:
             if klasa == "1":
                 player = Player((4 - difficulty) * 60)
                 player.add_weapon("Noga", 11, 99, 5, "Kopnięcie przeciwnika")
-                player.add_weapon("Miecz pazia", 40 - (difficulty - 1) * 5, 70 - (difficulty - 1) * 5, 5, "Cios mieczem pazia")
+                player.add_weapon("Miecz pazia", 40 - (difficulty - 1) * 5, 70 - (difficulty - 1) * 5, 5,
+                                  "Cios mieczem pazia")
                 player.add_armor("Zardzewiała zbroja", 15)
                 break
 
             elif klasa == "2":
                 player = Player((4 - difficulty) * 40)
                 player.add_weapon("Ręce", 11, 99, 5, "Proste zaklęcie rażące")
-                player.add_weapon("Dębowa różdżka", 50 - (difficulty - 1) * 5, 80 - (difficulty - 1) * 5, 15, "Silne zaklęcie oszałamiające")
+                player.add_weapon("Dębowa różdżka", 50 - (difficulty - 1) * 5, 80 - (difficulty - 1) * 5, 15,
+                                  "Silne zaklęcie oszałamiające")
                 player.add_armor("Stara szata", 5)
                 break
 
             elif klasa == "3":
                 player = Player((4 - difficulty) * 50)
                 player.add_weapon("Ręka", 11, 99, 5, "Sierpowy")
-                player.add_weapon("Sztylet złodziejaszka", 40 - (difficulty - 1) * 5, 75 - (difficulty - 1) * 5, 10,"Cios sztyletem")
+                player.add_weapon("Sztylet złodziejaszka", 40 - (difficulty - 1) * 5, 75 - (difficulty - 1) * 5, 10,
+                                  "Cios sztyletem")
                 player.add_armor("Skurzana tunika", 10)
                 break
 

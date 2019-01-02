@@ -23,10 +23,10 @@ class Action:
         self.done.append(False)
 
     def randomize(self):
-        all = list(zip(self.description, self.description2, self.exp, self.damage, self.encounter))
-        random.shuffle(all)
+        all_actions = list(zip(self.description, self.description2, self.exp, self.damage, self.encounter))
+        random.shuffle(all_actions)
 
-        self.description, self.description2, self.exp, self.damage, self.encounter = map(list, zip(*all))
+        self.description, self.description2, self.exp, self.damage, self.encounter = map(list, zip(*all_actions))
 
     def print_actions(self, sec):
         print("-"*20)
@@ -69,7 +69,8 @@ class Action:
                     Addons.slow_print(Code.get_rand_num(), 0.05)
 
                 if self.encounter[num][:4] == "Item":
-                    if random.randint(1, len(player.available_armors) + len(player.available_weapons)) + 1 > len(player.available_armors):
+                    if random.randint(1, len(player.available_armors) + len(player.available_weapons)) + 1 > len(
+                            player.available_armors):
                         player.add_random_weapon()
                     else:
                         player.add_random_armor()

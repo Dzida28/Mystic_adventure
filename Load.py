@@ -36,7 +36,8 @@ def load():
             action.append(Action())
 
             for x in range(3, 23, 5):
-                action[len(action)-1].add_action(data[i + x], data[i + x + 1], int(data[i + x + 2]), int(data[i + x + 3]), data[i + x + 4])
+                action[len(action) - 1].add_action(data[i + x], data[i + x + 1], int(data[i + x + 2]),
+                                                   int(data[i + x + 3]), data[i + x + 4])
 
             action[len(action)-1].randomize()
 
@@ -71,4 +72,3 @@ def load():
     else:
         input("Ktoś majstrowal przy plikach z danymi!")
         exit(0)
-

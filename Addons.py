@@ -61,7 +61,7 @@ def print_welcome():
     os.system('cls')
 
 
-def credits():
+def creators():
     slow_print("""Twórcy:
     Wojciech Zamarski
     Nikodem Oleniacz

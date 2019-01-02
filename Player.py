@@ -35,7 +35,8 @@ class Player:
 
                 for x in range(0, len(self.weapon)):
                     print("%s. %s   (dmg %s-%s, chance %s%%, crit %s%%)" % (
-                        x + 1, self.weapon[x].attack_name, self.weapon[x].dmg - 10, self.weapon[x].dmg + 10, self.weapon[x].chance,
+                        x + 1, self.weapon[x].attack_name, self.weapon[x].dmg - 10, self.weapon[x].dmg + 10,
+                        self.weapon[x].chance,
                         self.weapon[x].crit))
 
                 print("\nPodaj numer ataku")
@@ -138,7 +139,8 @@ Twój maksymalny poziom hp został zwiększony o """ + str(self.max_hp - old_max
             crit = random.randint(self.lvl + 1, self.lvl + 15)
             attack_name = self.available_attack_names.pop(index)
             self.add_weapon(name, dmg, chance, crit, attack_name)
-            Addons.slow_print("Otrzymujesz przedmiot: %s (dmg %s-%s, chance %s%%, crit %s%%)" % (name, dmg - 10, dmg + 10, chance, crit), 0.05)
+            Addons.slow_print("Otrzymujesz przedmiot: %s (dmg %s-%s, chance %s%%, crit %s%%)" % (
+                name, dmg - 10, dmg + 10, chance, crit), 0.05)
 
     def add_random_armor(self):
         if len(self.available_weapons) > 0:
@@ -189,7 +191,8 @@ Twój maksymalny poziom hp został zwiększony o """ + str(self.max_hp - old_max
         print("-" * 20 + "\nEkwipunek:")
         for x in range(1, len(self.weapon)):
             print("%s. %s   (dmg %s-%s, chance %s%%, crit %s%%)" % (
-                x, self.weapon[x].name, self.weapon[x].dmg - 10, self.weapon[x].dmg + 10, self.weapon[x].chance, self.weapon[x].crit))
+                x, self.weapon[x].name, self.weapon[x].dmg - 10, self.weapon[x].dmg + 10, self.weapon[x].chance,
+                self.weapon[x].crit))
             time.sleep(0.2)
 
         print("...")
