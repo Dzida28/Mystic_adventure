@@ -104,7 +104,7 @@ def guess(player):
         player.update_hp(10)
         if not player.dead:
             input("\nWciśnij ENTER, aby kontunuować...")
-            return False
+    return False
 
 
 def load_boss(player_class):
