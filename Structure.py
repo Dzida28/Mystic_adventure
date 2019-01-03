@@ -5,104 +5,81 @@ import Code
 
 
 class Structure:
-    def __init__(self, filename):
+    def __init__(self, player, filename):
         self.id_room = 1
-        self.print_fast_id = 0
+        self.visited_room = []
         self.end = False
+        self.player = player
         Load.FILE = filename
         Load.load()
         os.system('cls')
         Load.room.start()
 
-    def p_move(self, player):
-        if self.print_fast_id != self.id_room:
+    def p_move(self):
+        sec = 0
+        if self.id_room not in self.visited_room:
+            self.visited_room.append(self.id_room)
             sec = 0.001
-            self.print_fast_id = self.id_room
-        else:
-            sec = 0
 
         while True:
             os.system('cls')
+            available_moves = dict()
+
             Load.room.introduce(self.id_room - 1, sec)
-            print("-" * 20 + "\n\nGdzie się ruszasz?\n")
+            print("-"*20 + "\nGdzie się ruszasz?\n")
 
+            number = 1
             if self.id_room < 8:
-                print("1. " + Load.room.rooms_doors[self.id_room * 2 + - 1])
-                print("2. " + Load.room.rooms_doors[self.id_room * 2])
-
-                if self.id_room > 1:
-                    print("3. Zawróć")
-                    if not all(Load.action[self.id_room - 2].done):
-                        print("\nLub...\n4. Wykonaj akcje\n5. Pokaż statystyki gracza\n")
-                    else:
-                        print("\nLub...\n4. Pokaż statystyki gracza\n")
-                else:
-                    print("\nLub...\n3. Pokaż statystyki gracza\n")
-
-                move = input(">>>")
-
-                if move == "1":
-                    self.id_room *= 2
-                    break
-
-                if move == "2":
-                    self.id_room = self.id_room * 2 + 1
-                    break
-
-                if move == "3" and self.id_room == 1:
-                    player.show_equipment()
-                    break
-
-                if self.id_room > 1:
-                    if move == "3":
-                            self.id_room = int(self.id_room / 2)
-                            break
-
-                    if move == "4":
-                        if not all(Load.action[self.id_room - 2].done):
-                            Load.action[self.id_room - 2].do_action(player, Load.room, self.id_room - 1)
-                            self.print_fast_id = self.id_room
-                            break
-                        else:
-                            player.show_equipment()
-
-                if move == "5" and not all(Load.action[self.id_room - 2].done):
-                    player.show_equipment()
-
+                print("%s. %s" % (number, Load.room.rooms_doors[self.id_room*2 + - 1]))
+                available_moves[number] = self.go_left
+                number += 1
+                print("%s. %s" % (number, Load.room.rooms_doors[self.id_room*2]))
+                available_moves[number] = self.go_right
             else:
-                print("1. Wejdź do portalu")
-                print("2. Zawróć")
-                if not all(Load.action[self.id_room - 2].done):
-                    print("\nLub...\n3. Wykonaj akcje\n4. Pokaż statystyki gracza\n")
-                else:
-                    print("\nLub...\n3. Pokaż statystyki gracza\n")
+                print("%s. Wejdź do portalu" % number)
+                available_moves[number] = self.approach_portal
+            number += 1
 
-                move = input(">>>")
+            if self.id_room > 1:
+                print("%s. Zawróć" % number)
+                available_moves[number] = self.go_back
+                number += 1
+            print("\nLub...\n")
 
-                if move == "1":
-                    if Code.ending(player) == 1:
-                        self.end = True
-                        break
-                    else:
-                        self.id_room = 1
-                        break
+            if self.id_room > 1 and not all(Load.action[self.id_room - 2].done):
+                print("%s. Wykonaj akcje" % number)
+                available_moves[number] = self.do_action
+                number += 1
 
-                if move == "2":
-                    self.id_room = int(self.id_room / 2)
+            print("%s. Pokaż statystyki gracza\n" % number)
+            available_moves[number] = self.player.show_equipment
+
+            move = input(">>>")
+
+            try:
+                move = int(move)
+                if move in list(map(lambda a: a + 1, range(number))):
+                    available_moves.get(move)()
                     break
+            except ValueError:
+                pass
+            finally:
+                sec = 0
 
-                if move == "3":
-                    if not all(Load.action[self.id_room - 2].done):
-                        Load.action[self.id_room - 2].do_action(player, Load.room, self.id_room - 1)
-                        self.print_fast_id = self.id_room
-                        break
-                    else:
-                        player.show_equipment()
+    def go_left(self):
+        self.id_room = self.id_room*2
 
-                if move == "4" and not all(Load.action[self.id_room - 2].done):
-                    player.show_equipment()
+    def go_right(self):
+        self.id_room = self.id_room*2 + 1
 
-            self.print_fast_id = self.id_room
-            sec = 0
+    def go_back(self):
+        self.id_room = int(self.id_room/2)
 
-    os.system('cls')
+    def do_action(self):
+        Load.action[self.id_room - 2].do_action(self.player, Load.room, self.id_room - 1)
+
+    def approach_portal(self):
+        if Code.game_end(self.player):
+            self.end = True
+        else:
+            self.id_room = 1

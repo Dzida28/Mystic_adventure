@@ -81,15 +81,12 @@ def menu(sec):
 
 def score_table():
     if not os.path.isfile("scores.dat"):
-        file = open("scores.dat", "wb")
-        for i in range(3):
+        with open("scores.dat", "wb") as file:
             pickle.dump([0, 0, 0], file)
-        file.close()
 
     while True:
-        file = open("scores.dat", "rb")
-        all_scores = pickle.load(file)
-        file.close()
+        with open("scores.dat", "rb") as file:
+            all_scores = pickle.load(file)
 
         all_scores.sort(reverse=True)
 
@@ -100,11 +97,9 @@ def score_table():
         print("\nWciśnij ENTER, aby kontunuować...")
         p = input("...lub wpisz \"reset\" i wciśnij ENTER, aby zresetować tabelę wyników\n")
 
-        if p.upper() == "RESET":
-            file = open("scores.dat", "wb")
-            for i in range(3):
+        if p.upper().startswith("RESET"):
+            with open("scores.dat", "wb") as file:
                 pickle.dump([0, 0, 0], file)
-            file.close()
             os.system('cls')
         else:
             break
@@ -113,7 +108,7 @@ def score_table():
 def countdown():
     print("\n")
     for i in range(3):
-        slow_print(str(3 - i) + "...\n", 1, newline=False)
+        slow_print(str(3 - i) + "...\n", 0.6, newline=False)
 
 
 def slow_print(string, sec, newline=True):
@@ -122,10 +117,10 @@ def slow_print(string, sec, newline=True):
         time.sleep(sec)
 
     if len(string) % 3 == 1:
-        print(string[len(string) - 1], end="", flush=True)
+        print(string[len(string)-1], end="", flush=True)
     elif len(string) % 3 == 2:
-        print(string[len(string) - 2], end="", flush=True)
-        print(string[len(string) - 1], end="", flush=True)
+        print(string[len(string)-2], end="", flush=True)
+        print(string[len(string)-1], end="", flush=True)
 
     if newline:
         print("\n")

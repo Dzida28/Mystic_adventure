@@ -15,7 +15,10 @@ FILES = [
 
 for i in FILES:
     try:
-        open(i)
+        with open(i, encoding='utf-8') as f:
+            if not f.readlines():
+                input("Pusty plik " + i)
+                exit(0)
     except FileNotFoundError:
         input("Brak pliku " + i)
         exit(0)
@@ -36,19 +39,11 @@ while True:
     print("\nPodaj numer opcji")
     x = input(">>>")
     os.system('cls')
-    if x == '2':
-        Addons.score_table()
 
-    elif x == '3':
-        Addons.creators()
-
-    elif x == '4':
-        exit(0)
-
-    elif x == '1':
+    if x == '1':
         while True:
             os.system('cls')
-            print("=-" * 18)
+            print("=-"*18)
             print("Wybierz poziom trudności (1/2/3)\n0. Anuluj\n")
             print("1. Łatwy")
             print("2. Normalny")
@@ -65,9 +60,9 @@ while True:
                 difficulty = None
                 break
 
-        while True and difficulty is not None:
+        while difficulty is not None:
             os.system('cls')
-            print("-=" * 18)
+            print("-="*18)
             print("Wybierz klasę (1/2/3)\n0. Anuluj\n")
             print("1. Wojownik")
             print("2. Mag")
@@ -75,25 +70,25 @@ while True:
             player_class = input("\n>>>")
 
             if player_class == "1":
-                player = Player((4 - difficulty) * 60)
+                player = Player((4 - difficulty)*60)
                 player.add_weapon("Noga", 11, 99, 5, "Kopnięcie przeciwnika")
-                player.add_weapon("Miecz pazia", 40 - (difficulty - 1) * 5, 70 - (difficulty - 1) * 5, 5,
+                player.add_weapon("Miecz pazia", 40 - (difficulty - 1)*5, 70 - (difficulty - 1)*5, 5,
                                   "Cios mieczem pazia")
                 player.add_armor("Zardzewiała zbroja", 15)
                 break
 
             elif player_class == "2":
-                player = Player((4 - difficulty) * 40)
+                player = Player((4 - difficulty)*40)
                 player.add_weapon("Ręce", 11, 99, 5, "Proste zaklęcie rażące")
-                player.add_weapon("Dębowa różdżka", 50 - (difficulty - 1) * 5, 80 - (difficulty - 1) * 5, 15,
+                player.add_weapon("Dębowa różdżka", 50 - (difficulty - 1)*5, 80 - (difficulty - 1)*5, 15,
                                   "Silne zaklęcie oszałamiające")
                 player.add_armor("Stara szata", 5)
                 break
 
             elif player_class == "3":
-                player = Player((4 - difficulty) * 50)
+                player = Player((4 - difficulty)*50)
                 player.add_weapon("Ręka", 11, 99, 5, "Sierpowy")
-                player.add_weapon("Sztylet złodziejaszka", 40 - (difficulty - 1) * 5, 75 - (difficulty - 1) * 5, 10,
+                player.add_weapon("Sztylet złodziejaszka", 40 - (difficulty - 1)*5, 75 - (difficulty - 1)*5, 10,
                                   "Cios sztyletem")
                 player.add_armor("Skurzana tunika", 10)
                 break
@@ -102,23 +97,20 @@ while True:
                 break
 
         if player is not None:
+            structure = Structure(player, player_class + ".txt")
             player.load_weapons(int(player_class))
-            structure = Structure(player_class + ".txt")
-
-            Code.boss_name = ['Deathwing', 'Czarnoksieznik', 'Ksiezniczka'][int(player_class) - 1]
-            Code.boss_pict = ""
-            with open("boss.txt", "r") as f:
-                tmp = 0
-                for line in f:
-                    if line[:3] == "x x":
-                        tmp += 1
-                    if tmp > int(player_class) * 2:
-                        break
-                    if tmp > int(player_class) * 2 - 2:
-                        Code.boss_pict += line
-            f.close()
+            Code.load_boss(player_class)
 
             while True:
-                structure.p_move(player)
+                structure.p_move()
                 if structure.end or player.dead:
                     break
+
+    elif x == '2':
+        Addons.score_table()
+
+    elif x == '3':
+        Addons.creators()
+
+    elif x == '4':
+        exit(0)

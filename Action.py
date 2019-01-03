@@ -65,10 +65,10 @@ class Action:
                 self.done[num] = True
                 self.description[num] = "*Wykonano*"
 
-                if self.encounter[num][:4] == "Code":
+                if self.encounter[num].startswith("Code"):
                     Addons.slow_print(Code.get_code_digit(), 0.05)
 
-                if self.encounter[num][:4] == "Item":
+                if self.encounter[num].startswith("Item"):
                     if random.randint(1, len(player.available_armors) + len(player.available_weapons)) + 1 > len(
                             player.available_armors):
                         player.add_random_weapon()

@@ -5,7 +5,6 @@ from Action import Action
 
 
 FILE = ""
-
 room = Room()
 action = []
 
@@ -20,8 +19,7 @@ def load():
     with open(FILE, "r", encoding='utf-8') as f:
         data = f.readlines()
 
-    if data is not None and len(data) == 324:
-
+    if len(data) == 324:
         for i in range(len(data)):
             data[i] = data[i].replace("\n", "")
             data[i] = data[i].replace("\\n", "\n")
@@ -30,14 +28,17 @@ def load():
         data[0] = data[0][data[0].index("#") + 1:]
         room.add_room(data[0], data[1], "To jest pokój startowy. Nie ma tu nic ciekawego")
 
-        for i in range(2, len(data) - 1, 23):
-            room.add_room(data[i], data[i + 1], data[i + 2])
-
+        for i in range(2, len(data)-1, 23):
+            room.add_room(data[i], data[i+1], data[i+2])
             action.append(Action())
 
             for x in range(3, 23, 5):
-                action[len(action) - 1].add_action(data[i + x], data[i + x + 1], int(data[i + x + 2]),
-                                                   int(data[i + x + 3]), data[i + x + 4])
+                try:
+                    action[len(action)-1].add_action(data[i+x], data[i+x+1], int(data[i+x+2]),
+                                                     int(data[i+x+3]), data[i+x+4])
+                except ValueError as error:
+                    input(error)
+                    exit(0)
 
             action[len(action)-1].randomize()
 
@@ -50,7 +51,7 @@ def load():
         doors.append(room.rooms_doors[0])
         descriptions.append(room.rooms_description[0])
 
-        order = list(range(1, len(action) + 1))
+        order = list(range(1, len(action)+1))
         random.shuffle(order)
 
         for i in order:
@@ -62,7 +63,7 @@ def load():
                                     "\nZamiast kolejnych drzwi, widzisz przed sobą portal.")
             else:
                 descriptions.append(room.rooms_description[i])
-            actions.append(action[i - 1])
+            actions.append(action[i-1])
 
         room.rooms_names = names
         room.rooms_doors = doors
