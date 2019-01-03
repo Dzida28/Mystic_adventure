@@ -2,11 +2,12 @@
 import os
 import random
 import time
+import pickle
 import Addons
 import Code
 from Items import Weapon
 from Items import Armor
-import pickle
+from functools import reduce
 
 
 class Player:
@@ -134,7 +135,7 @@ class Player:
         self.weapon.append(Weapon(name, dmg, chance, crit, attack_name))
 
     def add_random_weapon(self):
-        if len(self.available_weapons) > 0:
+        if self.available_weapons:
             index = random.randint(0, len(self.available_weapons) - 1)
             name = self.available_weapons.pop(index)
             dmg = random.randint(self.lvl + 3, self.lvl + 6) * 10
@@ -146,16 +147,15 @@ class Player:
                 name, dmg - 10, dmg + 10, chance, crit), 0.05)
 
     def add_random_armor(self):
-        if len(self.available_weapons) > 0:
+        if self.available_armors:
             name = self.available_armors.pop(random.randint(0, len(self.available_armors) - 1))
-            armor = random.randint(2, 7) * 2
+            armor = random.randint(2, 7)*2
             self.add_armor(name, armor)
             Addons.slow_print("Otrzymujesz przedmiot: %s (redukcja obrażeń %s%%)" % (name, armor), 0.05)
 
             while True:
-                dmg_reduction = 0
-                for x in self.armor:
-                    dmg_reduction += x.armor
+                dmg_reduction = reduce(lambda a, b: a + b,
+                                       list(map(lambda a: self.armor[a].armor, range(len(self.armor)))))
 
                 if dmg_reduction >= 80:
                     Addons.slow_print("Jesteś przeciążony. Musisz pozbyć się przedmiotu %s (redukcja obrażeń %s%%)" %
@@ -190,19 +190,28 @@ class Player:
         Addons.slow_print("Statystyki gracza:\n", 0.02, newline=False)
         Addons.slow_print("Poziom: %s\n" % self.lvl, 0.01, newline=False)
         Addons.slow_print("Hp: %s/%s\n" % (self.hp, self.max_hp), 0.01, newline=False)
-        Addons.slow_print("Exp: %s/%s\n\n" % (self.exp, self.lvl * 100), 0.01, newline=False)
-        print("-"*20 + "\nEkwipunek:")
-        for x in range(1, len(self.weapon)):
-            print("%s. %s   (dmg %s-%s, chance %s%%, crit %s%%)" % (
-                x, self.weapon[x].name, self.weapon[x].dmg - 10, self.weapon[x].dmg + 10, self.weapon[x].chance,
-                self.weapon[x].crit))
-            time.sleep(0.2)
+        Addons.slow_print("Exp: %s/%s\n" % (self.exp, self.lvl * 100), 0.01, newline=False)
+        if self.armor:
+            Addons.slow_print("Redukcja obrażen: %s%%\n\n" %
+                              reduce(lambda a, b: a + b,
+                                     list(map(lambda a: self.armor[a].armor, range(len(self.armor))))),
+                              0.01, newline=False)
 
-        print("...")
-        for x in range(0, len(self.armor)):
-            print("%s. %s   (redukcja obrażeń %s%%)" % (len(self.weapon) + x, self.armor[x].name, self.armor[x].armor))
-            time.sleep(0.2)
-        print("...")
+        print("-"*20 + "\nEkwipunek:")
+        if self.weapon:
+            for x in range(1, len(self.weapon)):
+                print("%s. %s   (dmg %s-%s, chance %s%%, crit %s%%)" % (
+                    x, self.weapon[x].name, self.weapon[x].dmg - 10, self.weapon[x].dmg + 10, self.weapon[x].chance,
+                    self.weapon[x].crit))
+                time.sleep(0.2)
+            print("...")
+
+        if self.armor:
+            for x in range(0, len(self.armor)):
+                print("%s. %s   (redukcja obrażeń %s%%)" % (len(self.weapon) + x, self.armor[x].name, self.armor[x].armor))
+                time.sleep(0.2)
+            print("...")
+
         print(str(len(self.weapon) + len(self.armor)) + ". Kartka z zapisanym kodem: " + Code.return_known_code())
         input("\n\n\nWciśnij ENTER, aby kontunuować...")
 
