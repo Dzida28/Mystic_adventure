@@ -12,7 +12,6 @@ class Structure:
         self.player = player
         Load.FILE = filename
         Load.load()
-        os.system('cls')
         Load.room.start()
 
     def p_move(self):

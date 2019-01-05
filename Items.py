@@ -6,8 +6,17 @@ class Weapon:
         self.crit = crit
         self.attack_name = attack_name
 
+    def __str__(self):
+        return "%s    (dmg %s-%s, chance %s%%, crit %s%%)" % (
+            self.attack_name, self.dmg - 10, self.dmg + 10,
+            self.chance,
+            self.crit)
+
 
 class Armor:
     def __init__(self, name, armor):
         self.armor = armor
         self.name = name
+
+    def __str__(self):
+        return "%s    (redukcja obrażeń %s%%)" % (self.name, self.armor)

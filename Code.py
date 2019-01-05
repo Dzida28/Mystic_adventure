@@ -67,7 +67,7 @@ z którego tu przyszedłeś.""", sec)
         p = input(">>>")
 
         if p == "1":
-            if guess(player) or player.dead:
+            if guess(player):
                 return True
 
         elif p == "2":
@@ -84,19 +84,7 @@ def guess(player):
     if code == code_input:
         Addons.slow_print("\nPodałeś właściwy Kod!\n", 0.05, newline=False)
         player.update_lvl(50)
-        Addons.slow_print("Wrota otwierają się z wielkim piskiem...\n" + boss_name + " chce pożreć Twoją duszę!", 0.1)
-        Addons.slow_print(boss_pict, 0.0001)
-        input("\nWciśnij ENTER, aby kontunuować...")
-
-        player.fight(boss_name, int(score_multiplier*player.max_hp/9)*10)
-        if not player.dead:
-            Addons.slow_print("Teraz już nic nie stoi na przeszkodzie, aby opuścić to miejsce.\nOdzyskałeś wolność...",
-                              0.05)
-            Addons.print_congrats()
-            print("\nKONIEC GRY")
-            player.save_score(score_multiplier)
-            input("\nWciśnij ENTER, aby kontunuować...")
-        os.system('cls')
+        fight_with_boss(player)
         return True
 
     else:
@@ -104,7 +92,26 @@ def guess(player):
         player.update_hp(10)
         if not player.dead:
             input("\nWciśnij ENTER, aby kontunuować...")
+        else:
+            return True
+
     return False
+
+
+def fight_with_boss(player):
+    Addons.slow_print("Wrota otwierają się z wielkim piskiem...\n" + boss_name + " chce pożreć Twoją duszę!", 0.1)
+    Addons.slow_print(boss_pict, 0.0001)
+    input("\nWciśnij ENTER, aby kontunuować...")
+
+    player.fight(boss_name, int(score_multiplier * player.max_hp / 9) * 10)
+    if not player.dead:
+        Addons.slow_print("Teraz już nic nie stoi na przeszkodzie, aby opuścić to miejsce.\nOdzyskałeś wolność...",
+                          0.05)
+        Addons.print_congrats()
+        print("\nKONIEC GRY")
+        player.save_score(score_multiplier)
+        input("\nWciśnij ENTER, aby kontunuować...")
+    os.system('cls')
 
 
 def load_boss(player_class):
