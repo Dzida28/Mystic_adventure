@@ -140,22 +140,20 @@ class Player:
             crit = random.randint(self.lvl + 1, self.lvl + 15)
             attack_name = self.available_attack_names.pop(index)
             self.add_weapon(name, dmg, chance, crit, attack_name)
-            Addons.slow_print("Otrzymujesz przedmiot: %s (dmg %s-%s, chance %s%%, crit %s%%)" % (
-                name, dmg - 10, dmg + 10, chance, crit), 0.05)
+            Addons.slow_print("Otrzymujesz przedmiot: %s" % self.weapon[-1], 0.05)
 
     def add_random_armor(self):
         if self.available_armors:
             name = self.available_armors.pop(random.randint(0, len(self.available_armors) - 1))
             armor = random.randint(2, 7)*2
             self.add_armor(name, armor)
-            Addons.slow_print("Otrzymujesz przedmiot: %s (redukcja obrażeń %s%%)" % (name, armor), 0.05)
+            Addons.slow_print("Otrzymujesz przedmiot: %s" % self.armor[-1], 0.05)
 
             while True:
                 dmg_reduction = reduce(lambda a, x: a + x.armor, self.armor, 0)
 
                 if dmg_reduction >= 80:
-                    Addons.slow_print("Jesteś przeciążony. Musisz pozbyć się przedmiotu %s (redukcja obrażeń %s%%)" %
-                                      (self.armor[0].name, self.armor[0].armor), 0.05)
+                    Addons.slow_print("Jesteś przeciążony. Musisz pozbyć się przedmiotu %s" % self.armor[0], 0.05)
                     del self.armor[0]
                 else:
                     break
