@@ -5,16 +5,15 @@ from Action import Action
 
 
 class Load:
-    def __init__(self, file):
-        self.FILE = file
+    def __init__(self):
         self.room = Room()
         self.action = []
 
-    def load(self, code):
+    def load(self, file, code):
         self.room = Room()
         self.action = []
 
-        with open(self.FILE, "r", encoding='utf-8') as f:
+        with open(file, "r", encoding='utf-8') as f:
             data = f.readlines()
 
         data = self.format_text(data)

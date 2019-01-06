@@ -97,6 +97,7 @@ while True:
                 break
 
         if player is not None:
+            os.system('cls')
             player.load_weapons(int(player_class))
             code.load_boss(player_class)
             structure = Structure(player, player_class + ".txt", code)

@@ -4,14 +4,14 @@ import os
 
 
 class Structure:
-    def __init__(self, player, filename, code):
+    def __init__(self, player, file, code):
         self.id_room = 1
         self.visited_room = []
         self.end = False
         self.player = player
         self.code = code
-        self.load = Load(filename)
-        self.load.load(code)
+        self.load = Load()
+        self.load.load(file, code)
 
     def p_move(self):
         sec = 0
