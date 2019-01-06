@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
+from Load import Load
 import os
-import Load
 
 
 class Structure:
@@ -10,9 +10,8 @@ class Structure:
         self.end = False
         self.player = player
         self.code = code
-        Load.FILE = filename
-        Load.load(code)
-        Load.room.start(code.get_code_digit())
+        self.load = Load(filename)
+        self.load.load(code)
 
     def p_move(self):
         sec = 0
@@ -24,15 +23,15 @@ class Structure:
             os.system('cls')
             available_moves = dict()
 
-            Load.room.introduce(self.id_room - 1, sec)
+            self.load.room.introduce(self.id_room - 1, sec)
             print("-"*20 + "\nGdzie się ruszasz?\n")
 
             number = 1
             if self.id_room < 8:
-                print("%s. %s" % (number, Load.room.rooms_doors[self.id_room*2 + - 1]))
+                print("%s. %s" % (number, self.load.room.rooms_doors[self.id_room*2 + - 1]))
                 available_moves[number] = self.go_left
                 number += 1
-                print("%s. %s" % (number, Load.room.rooms_doors[self.id_room*2]))
+                print("%s. %s" % (number, self.load.room.rooms_doors[self.id_room*2]))
                 available_moves[number] = self.go_right
             else:
                 print("%s. Wejdź do portalu" % number)
@@ -45,7 +44,7 @@ class Structure:
                 number += 1
             print("\nLub...\n")
 
-            if self.id_room > 1 and not all(Load.action[self.id_room - 2].done):
+            if self.id_room > 1 and not all(self.load.action[self.id_room - 2].done):
                 print("%s. Wykonaj akcje" % number)
                 available_moves[number] = self.do_action
                 number += 1
@@ -75,7 +74,7 @@ class Structure:
         self.id_room = int(self.id_room/2)
 
     def do_action(self):
-        Load.action[self.id_room - 2].do_action(self.player, Load.room, self.id_room - 1)
+        self.load.action[self.id_room-2].do_action(self.player, self.load.room, self.id_room - 1)
 
     def approach_portal(self):
         if self.code.game_end(self.player):

@@ -4,72 +4,78 @@ from Room import Room
 from Action import Action
 
 
-FILE = ""
-room = Room()
-action = []
+class Load:
+    def __init__(self, file):
+        self.FILE = file
+        self.room = Room()
+        self.action = []
 
+    def load(self, code):
+        self.room = Room()
+        self.action = []
 
-def load(code):
-    global room
-    global action
+        with open(self.FILE, "r", encoding='utf-8') as f:
+            data = f.readlines()
 
-    room = Room()
-    action = []
+        data = self.format_text(data)
+        self.prepare_start_room(data[0], data[1])
 
-    with open(FILE, "r", encoding='utf-8') as f:
-        data = f.readlines()
+        for i in range(2, len(data)-1, 23):
+            self.room.add_room(data[i], data[i+1], data[i+2])
+            self.action.append(Action(code))
+            self.read_actions(data, i)
 
-    for i in range(len(data)):
-        data[i] = format_text(data[i])
+        self.shuffle_rooms()
+        self.room.start(code.get_code_digit())
 
-    data[0] = data[0][data[0].index("#") + 1:]
-    room.add_room(data[0], data[1], "To jest pokój startowy. Nie ma tu nic ciekawego")
+    def prepare_start_room(self, name, description):
+        name = name[name.index("#") + 1:]
+        self.room.add_room(name, description, "To jest pokój startowy. Nie ma tu nic ciekawego")
 
-    for i in range(2, len(data)-1, 23):
-        room.add_room(data[i], data[i+1], data[i+2])
-        action.append(Action(code))
-
+    def read_actions(self, data, i):
         for x in range(3, 23, 5):
             try:
-                action[len(action)-1].add_action(data[i+x], data[i+x+1], int(data[i+x+2]),
-                                                 int(data[i+x+3]), data[i+x+4])
+                self.action[len(self.action)-1].add_action(data[i+x],
+                                                           data[i+x+1], int(data[i+x+2]),
+                                                           int(data[i+x+3]), data[i+x+4])
             except ValueError as error:
                 input(error)
                 exit(0)
+        self.action[len(self.action) - 1].randomize()
 
-        action[len(action)-1].randomize()
+    def shuffle_rooms(self):
+        names = []
+        doors = []
+        descriptions = []
+        actions = []
 
-    names = []
-    doors = []
-    descriptions = []
-    actions = []
+        names.append(self.room.rooms_names[0])
+        doors.append(self.room.rooms_doors[0])
+        descriptions.append(self.room.rooms_description[0])
 
-    names.append(room.rooms_names[0])
-    doors.append(room.rooms_doors[0])
-    descriptions.append(room.rooms_description[0])
+        order = list(range(1, len(self.action) + 1))
+        random.shuffle(order)
 
-    order = list(range(1, len(action)+1))
-    random.shuffle(order)
+        for i in order:
+            names.append(self.room.rooms_names[i])
+            doors.append(self.room.rooms_doors[i])
 
-    for i in order:
-        names.append(room.rooms_names[i])
-        doors.append(room.rooms_doors[i])
+            if order.index(i) > 5:
+                descriptions.append(self.room.rooms_description[i] +
+                                    "\nZamiast kolejnych drzwi, widzisz przed sobą portal.")
+            else:
+                descriptions.append(self.room.rooms_description[i])
+            actions.append(self.action[i - 1])
 
-        if order.index(i) > 5:
-            descriptions.append(room.rooms_description[i] +
-                                "\nZamiast kolejnych drzwi, widzisz przed sobą portal.")
-        else:
-            descriptions.append(room.rooms_description[i])
-        actions.append(action[i-1])
+        self.room.rooms_names = names
+        self.room.rooms_doors = doors
+        self.room.rooms_description = descriptions
+        self.action = actions
 
-    room.rooms_names = names
-    room.rooms_doors = doors
-    room.rooms_description = descriptions
-    action = actions
-
-
-def format_text(text):
-    text = text.replace("\n", "")
-    text = text.replace("\\n", "\n")
-    text = text.replace("\r", "")
-    return text
+    @staticmethod
+    def format_text(lines):
+        for i in range(len(lines)):
+            lines[i] = lines[i].replace("\n", "")
+            lines[i] = lines[i].replace("\\n", "\n")
+            lines[i] = lines[i].replace("\r", "")
+        return lines
