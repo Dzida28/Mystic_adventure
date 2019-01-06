@@ -24,7 +24,6 @@ for i in FILES:
         exit(0)
 
 Addons.print_welcome()
-
 sec = 0.05
 
 while True:

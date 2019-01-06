@@ -76,6 +76,9 @@ z którego tu przyszedłeś.""", sec)
         print("\nPodaj kod")
         code_input = input(">>>")
 
+        while len(code_input) != len(self.code):
+            code_input = input("\n>>>")
+
         if self.code == code_input:
             Addons.slow_print("\nPodałeś właściwy Kod!\n", 0.05, newline=False)
             player.update_lvl(50)

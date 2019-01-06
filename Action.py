@@ -55,43 +55,40 @@ class Action:
                     num = -1
 
                 if num == 0:
+                    return
+
+            num -= 1
+
+            print("\n...")
+            Addons.slow_print(self.description2[num], 0.03)
+            self.done[num] = True
+            self.description[num] = "*Wykonano*"
+
+            if self.encounter[num].startswith("Code"):
+                Addons.slow_print(self.code.get_code_digit(), 0.05)
+
+            if self.encounter[num].startswith("Item"):
+                if random.randint(1, len(player.available_armors) + len(player.available_weapons)) + 1 > len(
+                        player.available_armors):
+                    player.add_random_weapon()
+                else:
+                    player.add_random_armor()
+
+            if self.exp[num] > 0:
+                player.update_lvl(self.exp[num])
+
+            if abs(self.damage[num]) > 0:
+                player.update_hp(self.damage[num])
+                if player.dead:
                     break
 
-            if num != 0:
-                num -= 1
-
-                print("\n...")
-                Addons.slow_print(self.description2[num], 0.03)
-                self.done[num] = True
-                self.description[num] = "*Wykonano*"
-
-                if self.encounter[num].startswith("Code"):
-                    Addons.slow_print(self.code.get_code_digit(), 0.05)
-
-                if self.encounter[num].startswith("Item"):
-                    if random.randint(1, len(player.available_armors) + len(player.available_weapons)) + 1 > len(
-                            player.available_armors):
-                        player.add_random_weapon()
-                    else:
-                        player.add_random_armor()
-
-                if self.exp[num] > 0:
-                    player.update_lvl(self.exp[num])
-
-                if abs(self.damage[num]) > 0:
-                    player.update_hp(self.damage[num])
-                    if player.dead:
-                        break
-
-                if self.encounter[num][:4] not in ["None", "Item", "Code"]:
-                    Addons.slow_print(self.encounter[num] + " atakuje Cię!", 0.01)
-                    input("\nWciśnij ENTER, aby kontunuować...")
-                    player.fight(self.encounter[num], random.randint(7 + player.lvl, 11 + player.lvl) * 10)
-                    if player.dead:
-                        break
-
-                print("...\n")
-
+            if self.encounter[num][:4] not in ["None", "Item", "Code"]:
+                Addons.slow_print(self.encounter[num] + " atakuje Cię!", 0.01)
                 input("\nWciśnij ENTER, aby kontunuować...")
-            else:
-                break
+                player.fight(self.encounter[num], random.randint(7 + player.lvl, 10 + player.lvl)*10)
+                if player.dead:
+                    break
+
+            print("...\n")
+
+            input("\nWciśnij ENTER, aby kontunuować...")
