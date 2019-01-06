@@ -1,18 +1,18 @@
 ﻿# -*- coding: utf-8 -*-
 import os
 import Load
-import Code
 
 
 class Structure:
-    def __init__(self, player, filename):
+    def __init__(self, player, filename, code):
         self.id_room = 1
         self.visited_room = []
         self.end = False
         self.player = player
+        self.code = code
         Load.FILE = filename
-        Load.load()
-        Load.room.start()
+        Load.load(code)
+        Load.room.start(code.get_code_digit())
 
     def p_move(self):
         sec = 0
@@ -78,7 +78,7 @@ class Structure:
         Load.action[self.id_room - 2].do_action(self.player, Load.room, self.id_room - 1)
 
     def approach_portal(self):
-        if Code.game_end(self.player):
+        if self.code.game_end(self.player):
             self.end = True
         else:
             self.id_room = 1

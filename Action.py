@@ -1,18 +1,18 @@
 ﻿# -*- coding: utf-8 -*-
 import random
 import os
-import Code
 import Addons
 
 
 class Action:
-    def __init__(self):
+    def __init__(self, code):
         self.description = []
         self.description2 = []
         self.exp = []
         self.damage = []
         self.encounter = []
         self.done = []
+        self.code = code
 
     def add_action(self, description, description2, exp, damage, encounter):
         self.description.append(description)
@@ -66,7 +66,7 @@ class Action:
                 self.description[num] = "*Wykonano*"
 
                 if self.encounter[num].startswith("Code"):
-                    Addons.slow_print(Code.get_code_digit(), 0.05)
+                    Addons.slow_print(self.code.get_code_digit(), 0.05)
 
                 if self.encounter[num].startswith("Item"):
                     if random.randint(1, len(player.available_armors) + len(player.available_weapons)) + 1 > len(

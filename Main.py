@@ -1,7 +1,7 @@
 from Structure import Structure
 from Player import Player
+from Code import Code
 import os
-import Code
 import Addons
 
 
@@ -29,6 +29,7 @@ sec = 0.05
 
 while True:
     difficulty = None
+    code = None
     player = None
     player_class = None
 
@@ -52,15 +53,15 @@ while True:
 
             if difficulty in ["1", "2", "3"]:
                 difficulty = int(difficulty)
-                Code.score_multiplier = (difficulty / 3) + 1
-                Code.generate(difficulty + 2)
+                code = Code()
+                code.generate(difficulty + 2)
+                code.score_multiplier = (difficulty/3) + 1
                 break
 
             elif difficulty == "0":
-                difficulty = None
                 break
 
-        while difficulty is not None:
+        while code is not None:
             os.system('cls')
             print("-="*18)
             print("Wybierz klasę (1/2/3)\n0. Anuluj\n")
@@ -70,7 +71,7 @@ while True:
             player_class = input("\n>>>")
 
             if player_class == "1":
-                player = Player((4 - difficulty)*60)
+                player = Player((4 - difficulty)*60, code)
                 player.add_weapon("Noga", 11, 99, 5, "Kopnięcie przeciwnika")
                 player.add_weapon("Miecz pazia", 40 - (difficulty - 1)*5, 70 - (difficulty - 1)*5, 5,
                                   "Cios mieczem pazia")
@@ -78,7 +79,7 @@ while True:
                 break
 
             elif player_class == "2":
-                player = Player((4 - difficulty)*40)
+                player = Player((4 - difficulty)*40, code)
                 player.add_weapon("Ręce", 11, 99, 5, "Proste zaklęcie rażące")
                 player.add_weapon("Dębowa różdżka", 50 - (difficulty - 1)*5, 80 - (difficulty - 1)*5, 15,
                                   "Silne zaklęcie oszałamiające")
@@ -86,7 +87,7 @@ while True:
                 break
 
             elif player_class == "3":
-                player = Player((4 - difficulty)*50)
+                player = Player((4 - difficulty)*50, code)
                 player.add_weapon("Ręka", 11, 99, 5, "Sierpowy")
                 player.add_weapon("Sztylet złodziejaszka", 40 - (difficulty - 1)*5, 75 - (difficulty - 1)*5, 10,
                                   "Cios sztyletem")
@@ -97,9 +98,9 @@ while True:
                 break
 
         if player is not None:
-            structure = Structure(player, player_class + ".txt")
             player.load_weapons(int(player_class))
-            Code.load_boss(player_class)
+            code.load_boss(player_class)
+            structure = Structure(player, player_class + ".txt", code)
 
             while True:
                 structure.p_move()

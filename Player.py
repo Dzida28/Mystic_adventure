@@ -4,14 +4,13 @@ import random
 import time
 import pickle
 import Addons
-import Code
 from Items import Weapon
 from Items import Armor
 from functools import reduce
 
 
 class Player:
-    def __init__(self, max_hp):
+    def __init__(self, max_hp, code):
         self.exp = 0
         self.lvl = 1
         self.max_hp = max_hp
@@ -22,6 +21,7 @@ class Player:
         self.available_weapons = []
         self.available_attack_names = []
         self.available_armors = []
+        self.code = code
 
     def fight(self, enemy_name, full_enemy_hp):
         enemy_hp = full_enemy_hp
@@ -198,11 +198,11 @@ class Player:
                 print("%s. %s" % (len(self.weapon) + x, self.armor[x]))
                 time.sleep(0.2)
             Addons.slow_print("Łączna redukcja obrażen: %s%%\n" %
-                              reduce(lambda a, x: a + x.armor, self.armor, 0),
+                              reduce(lambda a, b: a + b.armor, self.armor, 0),
                               0.01, newline=False)
             print("...")
 
-        print(str(len(self.weapon) + len(self.armor)) + ". Kartka z zapisanym kodem: " + Code.return_known_code())
+        print(str(len(self.weapon) + len(self.armor)) + ". Kartka z zapisanym kodem: " + self.code.return_known_code())
         input("\n\n\nWciśnij ENTER, aby kontunuować...")
 
     def save_score(self, multiple=1):

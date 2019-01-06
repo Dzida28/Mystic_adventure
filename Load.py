@@ -9,7 +9,7 @@ room = Room()
 action = []
 
 
-def load():
+def load(code):
     global room
     global action
 
@@ -27,7 +27,7 @@ def load():
 
     for i in range(2, len(data)-1, 23):
         room.add_room(data[i], data[i+1], data[i+2])
-        action.append(Action())
+        action.append(Action(code))
 
         for x in range(3, 23, 5):
             try:
