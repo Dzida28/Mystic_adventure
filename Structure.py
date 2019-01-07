@@ -11,10 +11,11 @@ class Structure:
         self.player = player
         self.code = code
         self.load = Load()
-        self.load.load(file, code)
+        self.load.read_file(file, code)
 
     def p_move(self):
         sec = 0
+
         if self.id_room not in self.visited_room:
             self.visited_room.append(self.id_room)
             sec = 0.001

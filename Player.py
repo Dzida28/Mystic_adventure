@@ -19,7 +19,6 @@ class Player:
         self.weapon = []
         self.armor = []
         self.available_weapons = []
-        self.available_attack_names = []
         self.available_armors = []
         self.code = code
 
@@ -35,7 +34,7 @@ class Player:
                 Addons.slow_print("Hp Gracza: " + str(self.hp) + "\nHp przeciwnika: " + str(enemy_hp), 0.005)
 
                 for x in range(0, len(self.weapon)):
-                    print("%s. %s" % (x + 1, self.weapon[x]))
+                    print("%s. %s%s" % (x + 1, self.weapon[x].attack_name, self.weapon[x]))
 
                 print("\nPodaj numer ataku")
                 p = input(">>>")
@@ -49,26 +48,27 @@ class Player:
             print("...")
             if random.randint(0, 100) < self.weapon[p].chance:
                 if random.randint(1, 100) > self.weapon[p].crit:
-                    tmp = self.weapon[p].dmg + random.randint(-10, 10)
+                    dmg = self.weapon[p].dmg + random.randint(-10, 10)
                 else:
                     Addons.slow_print("Obrażenia krytyczne!", 0.05)
-                    tmp = (self.weapon[p].dmg + random.randint(-10, 10))*2
-                enemy_hp -= tmp
-                Addons.slow_print("Trafiłeś za " + str(tmp), 0.05)
+                    dmg = (self.weapon[p].dmg + random.randint(-10, 10))*2
+                enemy_hp -= dmg
+                Addons.slow_print("Trafiłeś za " + str(dmg), 0.05)
 
             else:
                 Addons.slow_print("\nChybiłeś", 0.05)
 
             if enemy_hp <= 0:
-                tmp = random.randint(int(full_enemy_hp * (self.lvl / 10 + 1)) - 40,
+                exp = random.randint(int(full_enemy_hp * (self.lvl / 10 + 1)) - 40,
                                      int(full_enemy_hp * (self.lvl / 10 + 1)))
                 Addons.slow_print("Wygrałeś!", 0.05)
-                self.update_lvl(tmp)
+                self.update_lvl(exp)
                 break
 
-            tmp = int(random.randint(5, 25) * ((self.lvl/5) + 1))
+            dmg = int(random.randint(5, 25) * ((self.lvl/5) + 1))
             Addons.slow_print(enemy_name + " atakuje Cię!", 0.01)
-            self.update_hp(tmp)
+            self.update_hp(dmg)
+
             if self.dead:
                 break
 
@@ -101,9 +101,8 @@ class Player:
     def update_hp(self, value):
         time.sleep(0.05)
 
-        dmg_reduction = 0
-        for x in self.armor:
-            dmg_reduction += x.armor
+        dmg_reduction = reduce(lambda a, x: a + x.armor, self.armor, 0)
+
         if value > 0:
             value = int(value*(100 - dmg_reduction)/100)
 
@@ -134,13 +133,13 @@ class Player:
     def add_random_weapon(self):
         if self.available_weapons:
             index = random.randint(0, len(self.available_weapons) - 1)
-            name = self.available_weapons.pop(index)
+            name = self.available_weapons[index].get("weapon")
+            attack_name = self.available_weapons.pop(index).get("attack")
             dmg = random.randint(self.lvl + 3, self.lvl + 6) * 10
             chance = random.randint(50, 90)
             crit = random.randint(self.lvl + 1, self.lvl + 15)
-            attack_name = self.available_attack_names.pop(index)
             self.add_weapon(name, dmg, chance, crit, attack_name)
-            Addons.slow_print("Otrzymujesz przedmiot: %s" % self.weapon[-1], 0.05)
+            Addons.slow_print("Otrzymujesz przedmiot: %s%s" % (self.weapon[-1].name, self.weapon[-1]), 0.05)
 
     def add_random_armor(self):
         if self.available_armors:
@@ -174,8 +173,10 @@ class Player:
             if amount == 1:
                 lines[0] = lines[0][lines[0].index("#") + 1:]
             for i in range(0, len(lines) - 1, 3):
-                self.available_weapons.append(lines[i])
-                self.available_attack_names.append(lines[i+1])
+                self.available_weapons.append({
+                    "weapon": lines[i],
+                    "attack": lines[i+1]
+                })
                 self.available_armors.append(lines[i+2])
 
     def show_equipment(self):
@@ -189,7 +190,7 @@ class Player:
         print("-"*20 + "\nEkwipunek:")
         if self.weapon:
             for x in range(1, len(self.weapon)):
-                print("%s. %s" % (x, self.weapon[x]))
+                print("%s. %s%s" % (x + 1, self.weapon[x].name, self.weapon[x]))
                 time.sleep(0.2)
             print("...")
 
@@ -202,7 +203,7 @@ class Player:
                               0.01, newline=False)
             print("...")
 
-        print(str(len(self.weapon) + len(self.armor)) + ". Kartka z zapisanym kodem: " + self.code.return_known_code())
+        print("%s. Kartka z zapisanym kodem: %s" % (len(self.weapon) + len(self.armor), self.code.return_known_code()))
         input("\n\n\nWciśnij ENTER, aby kontunuować...")
 
     def save_score(self, multiple=1):

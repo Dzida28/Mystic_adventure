@@ -12,27 +12,29 @@ class Code:
         self.boss_pict = ""
         self.score_multiplier = 1
 
-    def generate(self, amount):
+    def __str__(self):
+        return self.code
 
+    def generate(self, amount):
         self.code = "".join(map(lambda a: str(r.randint(1, 9)), range(amount)))
         self.unknown = list(map(lambda a: str("*" * a + self.code[a] + "*" * (amount - a - 1)), range(amount)))
 
     def get_code_digit(self):
-        if len(self.unknown) > 0:
+        if self.unknown:
             num = r.choice(self.unknown)
             self.unknown.remove(num)
-            return "\"Kod: " + num + "\"\n"
+            return "\"Kod: %s\"\n" % num
         else:
-            return "Kod: " + self.code
+            return "\"Kod: %s\"\n" % self
 
     def return_known_code(self):
         known = list(self.code)
 
         for i in self.unknown:
-            for x in range(len(i)):
-                if i[x] != "*":
-                    known[x] = "*"
-                    break
+            index = list(map(lambda a: a != "*", list(i))).index(True)
+            known.insert(index, "*")
+            known.pop(index+1)
+
         known = "".join(known)
         return known
 
@@ -120,7 +122,7 @@ z którego tu przyszedłeś.""", sec)
             for line in f:
                 if line.startswith("x x"):
                     tmp += 1
-                if tmp > int(player_class) * 2:
+                if tmp > int(player_class)*2:
                     break
-                if tmp > int(player_class) * 2 - 2:
+                if tmp > int(player_class)*2 - 2:
                     self.boss_pict += line

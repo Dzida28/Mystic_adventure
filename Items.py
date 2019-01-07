@@ -7,10 +7,11 @@ class Weapon:
         self.attack_name = attack_name
 
     def __str__(self):
-        return "%s    (dmg %s-%s, chance %s%%, crit %s%%)" % (
-            self.attack_name, self.dmg - 10, self.dmg + 10,
+        return "   (dmg %s-%s, chance %s%%, crit %s%%)" % (
+            self.dmg - 10, self.dmg + 10,
             self.chance,
-            self.crit)
+            self.crit
+        )
 
 
 class Armor:

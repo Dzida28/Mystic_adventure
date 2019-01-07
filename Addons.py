@@ -92,7 +92,7 @@ def score_table():
 
         print("Tabela wyników:")
         for i in range(0, 3):
-            slow_print(str(i + 1) + ". " + str(all_scores[i]) + "\n", 0.03, newline=False)
+            slow_print(str(i+1) + ". " + str(all_scores[i]) + "\n", 0.03, newline=False)
 
         print("\nWciśnij ENTER, aby kontunuować...")
         p = input("...lub wpisz \"reset\" i wciśnij ENTER, aby zresetować tabelę wyników\n")
@@ -113,7 +113,7 @@ def countdown():
 
 def slow_print(string, sec, newline=True):
     for i in range(0, len(string) - 2, 3):
-        print(string[i:i + 3], end="", flush=True)
+        print(string[i:i+3], end="", flush=True)
         time.sleep(sec)
 
     if len(string) % 3 == 1:

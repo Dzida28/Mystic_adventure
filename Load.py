@@ -9,7 +9,7 @@ class Load:
         self.room = Room()
         self.action = []
 
-    def load(self, file, code):
+    def read_file(self, file, code):
         self.room = Room()
         self.action = []
 
@@ -40,7 +40,7 @@ class Load:
             except ValueError as error:
                 input(error)
                 exit(0)
-        self.action[len(self.action) - 1].randomize()
+        self.action[len(self.action)-1].randomize()
 
     def shuffle_rooms(self):
         names = []

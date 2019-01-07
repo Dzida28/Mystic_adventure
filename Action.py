@@ -25,7 +25,6 @@ class Action:
     def randomize(self):
         all_actions = list(zip(self.description, self.description2, self.exp, self.damage, self.encounter))
         random.shuffle(all_actions)
-
         self.description, self.description2, self.exp, self.damage, self.encounter = map(list, zip(*all_actions))
 
     def print_actions(self, sec):
@@ -39,7 +38,7 @@ class Action:
         while not all(self.done):
             num = -1
 
-            while not (0 <= num < len(self.description) + 1 and not self.done[num - 1]):
+            while not (0 < num < len(self.description) + 1 and not self.done[num - 1]):
                 os.system('cls')
                 room.introduce(room_id, 0)
                 self.print_actions(sec)
